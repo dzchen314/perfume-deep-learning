@@ -5,6 +5,7 @@ import time
 import requests
 import json
 import glob
+import shutil
 
 #location for the reviews
 BASE_URL = 'http://www.basenotes.net/fragrancereviews/page/{0}'
@@ -102,7 +103,7 @@ class Scraper():
         except TypeError:
             rating = float('nan')
         info_parse = str(info[0:]).split('<td>')
-        info_parse = remove_brackets(info_parse)
+        info_parse = self.remove_brackets(info_parse)
         year = info_parse[1][14:]
         gender = info_parse[2][6:]
         availability = info_parse[3][12:]
