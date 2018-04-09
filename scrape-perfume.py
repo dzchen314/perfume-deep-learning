@@ -108,7 +108,7 @@ class Scraper():
         availability = info_parse[3][12:]
         return rating, year, gender, availability
             
-    def remove_brackets(input_list):
+    def remove_brackets(self, input_list):
         ret = [None]*len(input_list)
         skip1c = 0
         for j in range(0,len(input_list)-1):
